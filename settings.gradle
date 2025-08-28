@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = 'jBridge'
-include('app')
+include('app', 'bothnativea', 'bothnativeb')

@@ -5,6 +5,19 @@ package org.pkg.app;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.load("/Users/sithi/sandbox/jBridge-backup/shared/native-lib.dylib");
+
+        long isolateThread = createIsolate();
+
+        int result = add(isolateThread, 3, 5);
+        System.out.printf("3 + 5 = %d%n", result);
+    }
+
+    private static native long createIsolate();
+
+    private static native int add(long isolateThread, int a, int b);
+
+    public static void hello() {
+        System.out.println("Hello from Java!");
     }
 }
