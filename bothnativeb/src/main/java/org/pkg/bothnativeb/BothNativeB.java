@@ -29,8 +29,9 @@ public class BothNativeB {
 
     @CEntryPoint(name = "Java_org_pkg_bothnativea_BothNativeA_something")
     public static void something(Pointer env, Pointer clazz, @CEntryPoint.IsolateThreadContext long isolateId, Pointer somethingPtr) {
-        int objHash = System.identityHashCode(somethingPtr.toObject());
-        System.out.printf("SomethingPtr hash in B: %d%n", objHash);
+        System.out.println("something called in B");
+        // int objHash = System.identityHashCode(somethingPtr.toObject());
+        // System.out.printf("SomethingPtr hash in B: %d%n", objHash);
         // Something something = somethingPtr.toObject(Something.class, true);
         // int hash = System.identityHashCode(something);
         // System.out.printf("Something hash in B: %d%n", hash);
